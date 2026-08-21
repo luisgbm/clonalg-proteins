@@ -1,0 +1,10 @@
+[package]
+name = "clonalg-proteins"
+version = "0.1.0"
+edition = "2024"
+description = "Sequential Clonalg solver for the 3D HP protein folding model"
+license = "MIT"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+rand = "0.9"
