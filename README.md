@@ -4,6 +4,8 @@ A sequential Rust implementation of the Clonal Selection Algorithm (Clonalg)
 for protein folding in the three-dimensional hydrophobic-polar lattice model
 (3D HP).
 
+**[Explore the interactive 3D protein-folding visualization](https://luisgbm.github.io/clonalg-proteins/protein-folding-3d.html)**
+
 The project models a protein as a sequence of hydrophobic (`H`) and polar (`P`)
 residues and searches for a low-energy, self-avoiding conformation on a cubic
 lattice. Each non-consecutive pair of adjacent hydrophobic residues contributes
@@ -118,6 +120,29 @@ known optimum of `11` contacts (energy `-11`).
 
 This Rust project focuses exclusively on the **sequential Clonalg search**. It
 does not implement MPI, clusters, island populations, or migration.
+
+## 3D visualization
+
+Open [`protein-folding-3d.html`](protein-folding-3d.html) directly in a modern
+browser to watch the benchmark protein change conformation until it reaches a
+valid energy `-11` fold.
+
+The viewer is a single offline HTML file with Three.js and OrbitControls
+embedded. It requires no web server, package installation, build step, or
+network connection. It provides:
+
+- real-time 3D residue and bond animation;
+- hydrophobic, polar, and non-local contact highlighting;
+- live generation, energy, contact, and search-state metrics;
+- orbit, zoom, play/pause, reset, progress, and speed controls;
+- responsive desktop and mobile layouts.
+
+The publication reports aggregate scores and the final optimum, but does not
+publish the coordinate history of an individual run. The animation is therefore
+a deterministic Clonalg-inspired reconstruction, not a claim that these were
+the article's exact intermediate conformations. Its terminal coordinates form a
+self-avoiding fold produced by this Rust implementation with 11 non-local H-H
+contacts.
 
 ## Implemented model
 
